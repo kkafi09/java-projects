@@ -1,6 +1,14 @@
 public class pattern {
     public static void main(String[] args) {
-        pattern6(50);
+        int[][] matrix = {
+                {1,2,3},
+                {1,2,3},
+                {1,2,3},
+                {1,2,3},
+        };
+
+        int n = matrix.length;
+        System.out.println(n);
     }
 
     /*

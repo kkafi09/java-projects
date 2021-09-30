@@ -15,27 +15,29 @@ public class sudokuSolver {
                 {0,8,0,0,6,0,1,0,0},
         };
 
-        printBoard(board);
 
-        if (solveBoard(board)){
-            System.out.println("succesfully solve");
-        } else {
-            System.out.println("unsolved ");
-        }
-
-        printBoard(board);
+        solveBoard(board);
+//        printBoard(board);
+//
+//        if (solveBoard(board)){
+//            System.out.println("solved");
+//        } else {
+//            System.out.println("unsolved ");
+//        }
+//
+//        printBoard(board);
     }
 
     public static void printBoard(int[][] board) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (i % 3 == 0 && i != 0) {
-                System.out.println("----------");
+                System.out.println("--------------------");
             }
             for (int j = 0; j < GRID_SIZE; j++) {
                 if (j % 3 == 0 && j != 0) {
                     System.out.print("|");
                 }
-                System.out.print(board[i][j]);
+                System.out.print(board[i][j] + " ");
             }System.out.println();
         }
     }
@@ -83,6 +85,7 @@ public class sudokuSolver {
                     for (int numberToTry = 1; numberToTry <= GRID_SIZE; numberToTry++) {
                         if (possible(board, numberToTry, row, column)) {
                             board[row][column] = numberToTry;
+                            printBoard(board);
 
                             if (solveBoard(board)) {
                                 return true;

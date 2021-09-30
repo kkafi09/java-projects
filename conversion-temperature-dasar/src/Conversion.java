@@ -38,7 +38,7 @@ public class Conversion {
 
             System.out.print("do you want to conversion again? ");
             String ask = sc.next().toLowerCase();
-            if (ask.equals("yes")) isAgain = false;
+            if (ask.equals("n")) isAgain = false;
         }
     }
 
