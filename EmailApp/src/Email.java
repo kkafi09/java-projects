@@ -65,12 +65,12 @@ public class Email {
     }
 
     // set mailbox capacity
-    private void setMailboxCapacity(int capacity) {
+    public void setMailboxCapacity(int capacity) {
         this.mailboxCapacity = capacity;
     }
 
     // alternate email
-    private void setAlternateEmail(String altEmail) {
+    public void setAlternateEmail(String altEmail) {
         this.alternateEmail = altEmail;
     }
 
@@ -113,14 +113,15 @@ public class Email {
         System.out.println("Your departement = " + departement.replace(".", ""));
         System.out.println("Your email = " + email);
         System.out.println("Your password = " + getPassword());
-        System.out.println("Your Mailboxcapacity = " + getMailboxCapacity());
+        System.out.println("Your mailboxcapacity = " + getMailboxCapacity() + "GB");
+        System.out.println("Your alternate email = " + getAlternateEmail());
     }
 
     public void option() {
         char choice = '\0';
 
         do {
-            System.out.print("\n=====================\nWhat do you want todo with the email : \na. show detail\nb. change password\nx. exit\nyour option = ");
+            System.out.print("\n=====================\nWhat do you want todo with the email : \na. show detail\nb. change password\nc. alternate email\nx. exit\nyour option = ");
             choice = sc.next().charAt(0);
             switch (choice) {
                 case 'a':
@@ -134,6 +135,14 @@ public class Email {
                     String newPass = sc.next();
                     changePassword(newPass);
                     System.out.println("your password updated");
+                    break;
+                case 'c':
+                    System.out.println("================");
+                    System.out.println("Alternate email");
+                    System.out.println("================");
+                    System.out.print("enter your alternate email = ");
+                    String newEmail = sc.next();
+                    setAlternateEmail(newEmail);
                     break;
                 case 'x':
                     break;
