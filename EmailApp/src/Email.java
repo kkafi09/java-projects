@@ -28,7 +28,7 @@ public class Email {
 
         // combine email
         email = firstName.toLowerCase() + "_" + lastName.toLowerCase() + "_" + year + "@" + departement + defaultSuffix;
-
+        showInfo();
         // set password
         int defaultPasswordLength = 8;
         this.password = generatePassword(defaultPasswordLength);
@@ -48,7 +48,7 @@ public class Email {
         } else if (choice == 4) {
             return "";
         } else {
-            return "";
+            throw new IllegalArgumentException("salah masukin");
         }
     }
 
