@@ -4,28 +4,28 @@ public class sudokuSolver {
     public static void main(String[] args) {
 
         int[][] board = {
-                {1,0,0,0,2,8,0,0,0},
-                {0,0,0,0,0,0,7,5,0},
-                {7,3,8,0,0,0,0,0,0},
-                {4,0,0,0,8,0,0,0,0},
-                {0,1,9,0,0,0,0,0,4},
-                {0,0,0,0,7,5,0,0,3},
-                {9,0,0,0,0,0,5,0,0},
-                {0,0,5,0,0,1,0,0,0},
-                {0,8,0,0,6,0,1,0,0},
+                {0,0,0,0,0,3,4,0,0},
+                {0,9,0,0,0,5,1,6,0},
+                {8,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0},
+                {0,2,0,0,8,0,0,3,0},
+                {0,0,3,0,4,0,9,0,0},
+                {0,0,0,5,0,2,0,8,0},
+                {3,0,0,0,0,0,0,4,7},
+                {7,5,0,0,0,0,0,0,1},
         };
 
 
         solveBoard(board);
-//        printBoard(board);
-//
-//        if (solveBoard(board)){
-//            System.out.println("solved");
-//        } else {
-//            System.out.println("unsolved ");
-//        }
-//
-//        printBoard(board);
+        printBoard(board);
+
+        if (solveBoard(board)){
+            System.out.println("solved");
+        } else {
+            System.out.println("unsolved ");
+        }
+
+        printBoard(board);
     }
 
     public static void printBoard(int[][] board) {
@@ -85,7 +85,7 @@ public class sudokuSolver {
                     for (int numberToTry = 1; numberToTry <= GRID_SIZE; numberToTry++) {
                         if (possible(board, numberToTry, row, column)) {
                             board[row][column] = numberToTry;
-                            printBoard(board);
+//                            printBoard(board);
 
                             if (solveBoard(board)) {
                                 return true;
